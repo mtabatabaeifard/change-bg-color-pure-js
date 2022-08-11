@@ -6,13 +6,9 @@ const error = (msg) => {
   h3.style.color = "red";
   h3.innerText = msg;
   mainDiv.appendChild(h3);
-  let errorTimer = setInterval(() => {
-      mainDiv.removeChild(h3);
-      location.reload();
-    }, 2000);
-    if (!mainDiv.hasChildNodes()) {
-        clearInterval(errorTimer);
-    }
+  setTimeout(() => {
+    mainDiv.removeChild(h3);
+  }, 2000);
 };
 const handleChangeBgColor = (e) => {
   e.preventDefault();
